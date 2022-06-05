@@ -19,7 +19,7 @@ const CreateStoreProduct = ({show, onHide}) => {
         >
             <Modal.Header closeButton>
                 <Modal.Title id="contained-modal-title-vcenter">
-                    Добавить продовца
+                    Добавить продавца
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
@@ -27,7 +27,7 @@ const CreateStoreProduct = ({show, onHide}) => {
                     <Form.Control
                         value={value}
                         onChange={e => setValue(e.target.value)}
-                        placeholder={"Введите название продовца"}
+                        placeholder={"Введите название продавца"}
                     />
                 </Form>
             </Modal.Body>

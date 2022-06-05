@@ -1,4 +1,4 @@
-import SellerPage from "./pages/SallerPage";
+import SellerPage from "./pages/SellerPage";
 import Profile from "./pages/Profile";
 import Shop from "./pages/Shop";
 import Authorization from "./pages/Authorization";
@@ -10,13 +10,12 @@ import {
     LOGIN_ROUTE,
     PROFILE_ROUTE,
     REGISTRATION_ROUTE,
-    SELLERPAGE_ROUTE, SELLERPANEL_ROUTE,
+    SELLER_PAGE_ROUTE, SELLER_PANEL_ROUTE,
     SHOP_ROUTE,
     STATISTICS_ROUTE,
     PRODUCT_ROUTE,
     ORDER_ROUTE
 } from "./urls/consts";
-
 
 export const authSellerRoutes = [
     {
@@ -24,7 +23,7 @@ export const authSellerRoutes = [
         Component: <SellerPanel/>
     },
     {
-        path: SELLERPANEL_ROUTE,
+        path: SELLER_PANEL_ROUTE,
         Component: <SellerPanel/>
     },
     {
@@ -32,12 +31,14 @@ export const authSellerRoutes = [
         Component: <Profile/>
     },
 ]
+
 export const authBuyerRoutes = [
         {
         path: PROFILE_ROUTE,
         Component: <Profile/>
     },
 ]
+
 export const publicRoutes = [
     {
         path: SHOP_ROUTE,
@@ -60,12 +61,11 @@ export const publicRoutes = [
         Component: <ProductPage/>
     },
     {
-        path: SELLERPAGE_ROUTE + '/:id',
+        path: SELLER_PAGE_ROUTE + '/:id',
         Component: <SellerPage/>
     },
     {
         path: ORDER_ROUTE,
         Component: <Basket/>
     },
-
 ]

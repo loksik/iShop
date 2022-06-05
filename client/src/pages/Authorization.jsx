@@ -18,8 +18,6 @@ const Authorization = observer(() => {
     const[patronymic,setPatronymic] = useState("");
     // const[typeUserId,setTypeUserId] = useState(0);
     const[isSeller,setIsSeller] = useState(false);
-
-
     const [isError, setIsError] = useState(false);
 
     const handleLoginOrReg = async () => {
@@ -33,21 +31,20 @@ const Authorization = observer(() => {
             } else {
                 data = await registration(email, password, name, surname, patronymic, typeUserId)
             }
-            console.log(data)
             user.setUser(user)
-            if (isSeller) {
+            if (isSeller || data.typeUserId === 10) {
                 user.setIsAuthSeller(true)
-                user.setisAuthBuyer(true)
+                user.setIsAuthBuyer(true)
             }
             else {
                 user.setIsAuthSeller(false)
-                user.setisAuthBuyer(true)
+                user.setIsAuthBuyer(true)
             }
             navigate(SHOP_ROUTE)
         }
         catch (e) {
             if (e?.response?.data?.message) {
-                alert(e.response.data.massage)
+                alert(e.response.data.message)
             } else {
                 alert("Произошла ошибка")
             }
@@ -238,6 +235,6 @@ const Authorization = observer(() => {
             </Card>
         </Container>
     );
-
 });
+
 export default Authorization;

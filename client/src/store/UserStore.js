@@ -11,7 +11,7 @@ export default class UserStore {
     setIsAuthSeller(bool) {
         this._isAuthSeller = bool
     }
-    setisAuthBuyer(bool) {
+    setIsAuthBuyer(bool) {
         this._isAuthBuyer = bool
     }
     setUser(user) {

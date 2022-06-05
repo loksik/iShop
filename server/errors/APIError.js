@@ -1,26 +1,25 @@
 class APIError extends Error{
-    constructor(status, massage) {
+    constructor(status, message) {
         super()
         this.status = status
-        this.massage = massage
-
+        this.message = message
     }
-    static badRequest(massage){
-        return new APIError(400,massage)
-    }
-
-    static forbidden(massage){
-        return new APIError(403,massage)
+    
+    static badRequest(message){
+        return new APIError(400, message)
     }
 
-    static notFound(massage){
-        return new APIError(404,massage)
+    static forbidden(message){
+        return new APIError(403, message)
     }
 
-    static internalServerError(massage){
-        return new APIError(500,massage)
+    static notFound(message){
+        return new APIError(404, message)
     }
 
+    static internalServerError(message){
+        return new APIError(500, message)
+    }
 }
 
 module.exports = APIError

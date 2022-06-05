@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {Button, Card, Col, Container, Form, Image, Row} from "react-bootstrap";
-import star from '../assets/army.png'
+import star from '../assets/img/army.png'
 import RetingList from "../components/RetingList";
 import {useParams} from 'react-router-dom'
 import {fetchOneProduct} from "../http/productAPI";

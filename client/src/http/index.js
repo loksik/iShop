@@ -3,7 +3,6 @@ import axios from "axios";
 const $host = axios.create({
     baseURL: 'http://localhost:4060/'
 })
-console.log()
 
 const $authHost = axios.create({
     baseURL: 'http://localhost:4060/'

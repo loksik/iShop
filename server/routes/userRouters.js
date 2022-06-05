@@ -3,8 +3,8 @@ const router = new Router()
 const userController = require('../controllers/userController')
 const authMiddleware = require('../midlewere/authMiddleware')
 
-router.post('/registretion', userController.registration)
-router.post('/autorization', userController.autorization)
-router.get('/ifAutorization',authMiddleware, userController.ifAutorization)
+router.post('/registration', userController.registration)
+router.post('/authorization', userController.authorization)
+router.get('/ifAuthorization', authMiddleware, userController.ifAuthorization)
 
 module.exports = router

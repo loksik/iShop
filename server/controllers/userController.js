@@ -15,8 +15,9 @@ class UserController {
     async registration(req, res, next) {
         const {email, password, name, surname, patronymic, typeUserId} = req.body
         if (!email || !password) {
-            return next(APIError.notFound('Некорректный email или password'))
+            return next(APIError.notFound('Некорректный email или пароль'))
         }
+        
         const candidate = await User.findOne({where: {email}})
         if (candidate) {
             return next(APIError.notFound('Пользователь с таким email уже существует'))
@@ -27,20 +28,23 @@ class UserController {
         const token = generateJwt(user.id, user.email, user.typeUserId)
         return res.json({token})
     }
-    async autorization(req, res, next) {
+    async authorization(req, res, next) {
         const {email, password} = req.body
+        
         const user = await User.findOne({where: {email}})
         if (!user) {
             return next(APIError.badRequest('Пользователь не найден'))
         }
+        
         let comparePassword = bcrypt.compareSync(password, user.password)
         if (!comparePassword) {
-            return next(APIError.badRequest('Указан неверный пароль'))
+            return next(APIError.badRequest('Указан некорректный email или пароль'))
         }
+        
         const token = generateJwt(user.id, user.email, user.typeUserId)
         return res.json({token})
     }
-    async ifAutorization(req, res) {
+    async ifAuthorization(req, res) {
         const token = generateJwt(req.user.id, req.user.email, req.user.typeUserId)
         return res.json({token})
     }

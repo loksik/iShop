@@ -10,21 +10,27 @@ import {fetchProducts, fetchStoreProducts, fetchTypes} from "../http/productAPI"
 const Shop = observer(() => {
     const {product} = useContext(Context)
 
-    useEffect(()=>{
+    useEffect(() => {
         fetchTypes().then(data => product.setTypeProducts(data))
         fetchStoreProducts().then(data => product.setStoreProducts(data))
         fetchProducts().then(data => product.setProducts(data.rows))
-
     }, [])
+
+    if (product.products.length < 1) {
+        return <div className="center">
+            Товаров не найдено!
+        </div>
+    }
 
     return (
         <Container>
             <Row className="mt-2">
                 <Col md={3}>
-                    <TypeBar />
+                    <TypeBar/>
                 </Col>
+
                 <Col md={9}>
-                    <SellerProductBar />
+                    <SellerProductBar/>
                     <ProductList/>
                 </Col>
             </Row>

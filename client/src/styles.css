@@ -28,3 +28,31 @@
 .nav-item:first-child {
     margin-left: 0;
 }
+
+.center {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+    margin: 2rem 0 3rem;
+}
+
+.basket-img {
+    width: 3rem;    
+}
+
+.cursor {
+    cursor: pointer;    
+}
+
+.basket-total {
+    margin: 1rem 0;
+}
+
+.seller-btn {
+    display: flex;
+    justify-content: space-evenly;
+}

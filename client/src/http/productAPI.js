@@ -1,6 +1,5 @@
 import {$authHost, $host} from "./index";
 
-
 export const createType = async (type) => {
     const {data} = await $authHost.post('api/typeProduct', type)
     return data

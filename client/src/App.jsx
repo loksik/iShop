@@ -5,26 +5,26 @@ import NavBar from "./components/NavBar";
 import {observer} from "mobx-react-lite";
 import {Context} from "./index";
 import {check} from "./http/userAPI";
-import {Spinner} from "react-bootstrap";
+import {Loader} from "./components/Loader";
 
 const App = observer(() => {
     const {user} = useContext(Context)
     const [loading, setLoading] = useState(true)
 
-    useEffect(() =>{
+    useEffect(() => {
         check().then(data => {
             user.setUser(true)
         }).finally(() => setLoading(false))
     }, [])
 
     if (loading) {
-       return  <Spinner nimation="border" variant="success"/>
+        return <Loader/>
     }
 
     return (
         <BrowserRouter>
-            <NavBar />
-            <AppRouter />
+            <NavBar/>
+            <AppRouter/>
         </BrowserRouter>
     );
 

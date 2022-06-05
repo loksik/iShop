@@ -38,7 +38,7 @@ const CreateProduct = ({show, onHide}) => {
                         )}</Dropdown.Menu>
                     </Dropdown>
                     <Dropdown className="mt-2 mb-2">
-                        <Dropdown.Toggle>Введите продовца</Dropdown.Toggle>
+                        <Dropdown.Toggle>Введите продавца</Dropdown.Toggle>
                         <Dropdown.Menu>{product.storeProducts.map(storeProduct =>
                             <Dropdown.Item key={storeProduct.id}>{storeProduct.name}</Dropdown.Item>
                         )}</Dropdown.Menu>

@@ -1,6 +1,6 @@
 import React from 'react';
 import {Card, Col, Image} from "react-bootstrap";
-import star from '../assets/army.png'
+import star from '../assets/img/army.png'
 import {PRODUCT_ROUTE} from "../urls/consts";
 import { useNavigate } from 'react-router-dom';
 
